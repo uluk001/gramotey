@@ -85,14 +85,20 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # DATABASES = {
 #     'default': {
 
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': '8659',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'gram_mura',
-        'USER': 'gram_mura',
-        'PASSWORD': 'mura',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -144,7 +150,7 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static") # Изначально пустой каталог, куда Django соберёт всё при выполнении manage.py collectstatic
+# STATIC_ROOT = ''
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
